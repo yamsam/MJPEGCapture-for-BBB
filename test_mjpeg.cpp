@@ -22,14 +22,14 @@ int main(int argc, const char* argv[])
   unsigned int max_count = 100;
   unsigned int count = 0;
 
-	double t = (double)cv::getTickCount();
+  double t = (double)cv::getTickCount();
   while (count < max_count){
-		cap >> frame;
-		count ++;
+    cap >> frame;
+    count ++;
   }
-	t = ((double)cv::getTickCount() - t)/cv::getTickFrequency();
+  t = ((double)cv::getTickCount() - t)/cv::getTickFrequency();
 
-	std::cout << "opencv time=" << t << std::endl;
+  std::cout << "opencv time=" << t << std::endl;
   std::cout << "fps=" << max_count / t << std::endl;
 
   return 0;

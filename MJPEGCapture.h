@@ -85,12 +85,9 @@ private:
   std::vector<void*>  m_mapped_buffer_ptrs;
   std::vector<size_t> m_mapped_buffer_lens;
 
-  // A copy of the mostly recently grabbed YUV data.
-  size_t      m_yuv_image_size;
-  uint8_t*    m_yuv_image_data;
+  // A copy of the mostly recently grabbed JPEG data.
   uint8_t*    m_jpeg_data;
   size_t m_jpeg_data_len;
-  uint32_t    m_yuv_bytes_per_line;
 
 };
 

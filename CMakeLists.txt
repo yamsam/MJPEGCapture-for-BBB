@@ -28,6 +28,11 @@ ${my_folder}/facetrack.cpp
 ${my_folder}/MJPEGCapture.cpp
 )
 
+set (face_bench_sources
+${my_folder}/facetrack_benchmark.cpp
+${my_folder}/MJPEGCapture.cpp
+)
+
 set (bench_src
 ${my_folder}/mjpeg_benchmark.cpp
 ${my_folder}/MJPEGCapture.cpp)
@@ -42,6 +47,9 @@ ${test_sources})
 add_executable(face
 ${face_sources})
 
+add_executable(face_bench
+${face_bench_sources})
+
 add_executable(bench
 ${bench_src})
 
@@ -52,8 +60,12 @@ target_link_libraries(camera
 target_link_libraries(test_opencv
 	${OpenCV_LIBS})
 
-
 target_link_libraries(face
+	${OpenCV_LIBS}
+	${V4L_LIB}
+)
+
+target_link_libraries(face_bench
 	${OpenCV_LIBS}
 	${V4L_LIB}
 )
